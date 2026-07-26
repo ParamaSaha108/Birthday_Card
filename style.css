@@ -1,0 +1,535 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Georgia, "Times New Roman", serif;
+    overflow:hidden;
+}
+
+
+/* ==========================================
+   LOADING SCREEN
+========================================== */
+
+#loading-screen{
+
+    width:100vw;
+    height:100vh;
+
+    background:#000;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.terminal-box{
+
+    text-align:center;
+    color:#00ff88;
+
+}
+
+.terminal-box h1{
+
+    font-size:45px;
+    margin-bottom:25px;
+    letter-spacing:2px;
+
+}
+
+.terminal-box p{
+
+    font-size:22px;
+    margin-top:15px;
+
+}
+
+#countdown{
+
+    margin-top:35px;
+    font-size:90px;
+    color:white;
+
+}
+
+
+
+/* ==========================================
+   BIRTHDAY SCREEN
+========================================== */
+
+#birthday-screen{
+
+    display:none;
+
+    width:100vw;
+    height:100vh;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:linear-gradient(
+        to bottom,
+        #010814,
+        #041937,
+        #072654,
+        #000814
+    );
+
+}
+
+
+
+/* ==========================================
+   STARS
+========================================== */
+
+#stars{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background-image:
+
+    radial-gradient(white 2px,transparent 2px),
+
+    radial-gradient(#fff8c9 2px,transparent 2px),
+
+    radial-gradient(white 1.5px,transparent 1.5px),
+
+    radial-gradient(#ffffcc 2px,transparent 2px);
+
+    background-size:
+
+    170px 170px,
+    250px 250px,
+    320px 320px,
+    450px 450px;
+
+    animation:twinkle 3s infinite alternate;
+
+}
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.45;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+/* ==========================================
+   MOON
+========================================== */
+
+#moon{
+
+    width:80px;
+    height:80px;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    top:70px;
+    right:60px;
+
+    background:#fff8c4;
+
+    box-shadow:
+
+        0 0 15px #fff8c4,
+        0 0 35px #fff8c4,
+        0 0 60px #fff8c4;
+
+}
+
+
+
+/* ==========================================
+   BALLOONS
+========================================== */
+
+.balloon{
+
+    position:absolute;
+
+    width:60px;
+    height:80px;
+
+    border-radius:50%;
+
+    bottom:-120px;
+
+}
+
+.balloon::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:2px;
+    height:65px;
+
+    background:white;
+
+    left:50%;
+    top:80px;
+
+}
+
+.balloon1{
+
+    left:8%;
+
+    background:#ff6584;
+
+    animation:fly 12s linear infinite;
+
+}
+
+.balloon2{
+
+    left:84%;
+
+    background:#66ccff;
+
+    animation:fly 15s linear infinite;
+
+    animation-delay:2s;
+
+}
+
+.balloon3{
+
+    left:55%;
+
+    background:#ffd93d;
+
+    animation:fly 18s linear infinite;
+
+    animation-delay:4s;
+
+}
+
+@keyframes fly{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-130vh);
+
+    }
+
+}
+
+
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.content{
+
+    position:relative;
+
+    z-index:10;
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+
+
+/* ==========================================
+   TITLE
+========================================== */
+
+#main-title{
+
+    color:#ff69b4;
+
+    font-size:60px;
+
+     margin-top:40px;
+
+    margin-bottom:40px;
+
+    text-shadow:
+
+        0 0 8px white,
+        0 0 18px white,
+        0 0 35px #ffd6e8;
+
+}
+
+/* ==========================================
+   WISH BOX
+========================================== */
+
+#wish-box{
+
+    width:50%;
+
+    min-height:250px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 0 25px rgba(255,255,255,.15);
+
+}
+
+#wish{
+
+    color:white;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+}
+
+
+/* ==========================================
+   LEFT CAT
+========================================== */
+
+#left-image{
+
+    position:absolute;
+
+    left:50px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:230px;
+
+    z-index:20;
+
+    animation:catFloat 3s ease-in-out infinite;
+
+}
+
+
+/* ==========================================
+   RIGHT CAT
+========================================== */
+
+#right-image{
+
+    position:absolute;
+
+    right:60px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:210px;
+
+    z-index:20;
+
+    animation:catFloat 3s ease-in-out infinite;
+
+}
+
+
+/* ==========================================
+   BUTTERFLY
+========================================== */
+
+#butterfly{
+
+    width:90px;
+
+    margin-top:25px;
+
+    animation:butterflyFly 2.5s ease-in-out infinite;
+
+}
+
+
+/* ==========================================
+   CAT ANIMATION
+========================================== */
+
+@keyframes catFloat{
+
+    0%{
+
+        transform:translateY(-50%);
+
+    }
+
+    50%{
+
+        transform:translateY(-60%);
+
+    }
+
+    100%{
+
+        transform:translateY(-50%);
+
+    }
+
+}
+
+
+/* ==========================================
+   BUTTERFLY ANIMATION
+========================================== */
+
+@keyframes butterflyFly{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    #main-title{
+
+        font-size:38px;
+
+    }
+
+    #wish-box{
+
+        width:90%;
+
+        padding:20px;
+
+    }
+
+    #wish{
+
+        font-size:18px;
+
+    }
+
+    #left-image{
+
+        width:110px;
+
+        left:10px;
+
+    }
+
+    #right-image{
+
+        width:110px;
+
+        right:10px;
+
+    }
+
+    #butterfly{
+
+        width:60px;
+
+    }
+
+    #moon{
+
+        width:60px;
+
+        height:60px;
+
+        right:20px;
+
+        top:20px;
+
+    }
+
+}
+
+@keyframes blink{
+
+    0%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:.3;
+    }
+
+    100%{
+        opacity:1;
+    }
+
+}
